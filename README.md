@@ -15,14 +15,14 @@ The project leverages **Dynamic Mode Decomposition (DMD)** with Hankel delay-emb
 ## 🛠 Project Structure
 
 - `sim.ipynb`: Main simulation environment containing the thermal solver, mission profile generators, and DT execution loops.
-- `Hankel-dmd.html`: Technical documentation and mathematical derivation of the Hankel-DMD approach for temperature diffusion.
+- `Hankel-dmd.pdf`: Technical documentation and mathematical derivation of the Hankel-DMD approach for temperature diffusion.
 - `utils/`: Core utilities for data importing (`Experiment` class) and thermal network definitions.
 - `results/`: Exported plots including MSE convergence and relative error analysis.
 
 ## 📊 Methodology
 
-### Thermal Network Architecture
-The twin approximates the physical module temperatures using  transition matrix derived from DMD, while continuously updating the transition matrices, for more details `Hankel-dmd.html`
+### Architecture
+The twin approximates the physical module temperatures using  transition matrix derived from DMD, while continuously updating the transition matrices, for more details `Hankel-dmd.pdf`
 
 
 
