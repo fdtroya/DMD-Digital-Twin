@@ -8,9 +8,7 @@ The project leverages **Dynamic Mode Decomposition (DMD)** with Hankel delay-emb
 
 - **Hankel-DMD Modeling**: Utilizes time-shifted snapshot matrices to identify system eigenvalues and modes, effectively capturing "stiff" thermal dynamics (fast chip transients vs. slow heatsink diffusion).
 - **Multi-Chip Cross-Heating**: Models thermal coupling between multiple heat sources (IGBTs/Diodes) within a single module.
-- **Online Parameter Identification**: Implements a Multi-step Least Squares algorithm to track thermal impedance changes over the module's lifetime.
-- **State Estimation**: Integration of Kalman Filters (DEKF/UKF) for real-time state correction and noise rejection.
-- **Optimization**: Offline parameter fitting using Particle Swarm Optimization (PSO) for Cauer RC network extraction.
+- **Online Adaptation**: Adapts the model for time varying systems, such as degrading power modules.
 
 ## 🛠 Project Structure
 
@@ -35,7 +33,7 @@ By stacking time-delayed observations into a **Hankel Matrix**, the DMD algorith
 
 The success of the Digital Twin is evaluated based on:
 1. **Running Mean Squared Error (MSE)**: Log-scale tracking of model convergence.
-2. **Instantaneous Relative Error**: Monitored against a <2% target threshold to ensure accuracy during fast load transients.
+2. **Instantaneous Relative Error**: Monitored against a target threshold to ensure accuracy during fast load transients.
 ## Limitations
 
 The method is purely data driven, as such it is very sensitive to baseline data, and it is not guaranteed to always output physically consistent data.
